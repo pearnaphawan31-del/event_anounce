@@ -1,0 +1,27 @@
+--University Event Announcment Web--
+
+UX/UI design
+- night mode/ light mode
+- web langauge (TH/ENG)
+
+Role
+- Admin
+- Staff
+- User(Student)
+
+Admin
+- See Event Dashboard
+- Disable/Enable/Add/Delete User, Staff, Event
+- Edit Event
+- Login / Log Out
+
+Staff
+- See Event Dashboard
+- Add Event
+- Edit Event
+- Delete
+- Login / Log Out
+
+User
+- See Event Dashboard
+- Login / Log Out
