@@ -217,8 +217,8 @@ app.patch('/api/admin/events/:id/toggle', verifyToken, verifyAdmin, (req, res) =
     const sql = `
         UPDATE event
         SET status = CASE
-            WHEN status = 1 THEN 0
-            ELSE 1
+            WHEN status = 'disable' THEN 'enable'
+            ELSE 'disable'
         END
         WHERE event_id = ?
     `;
@@ -246,8 +246,8 @@ app.patch('/api/admin/users/:id/toggle', verifyToken, verifyAdmin, (req, res) =>
     const sql = `
         UPDATE users
         SET user_status = CASE
-            WHEN user_status = 1 THEN 0
-            ELSE 1
+            WHEN user_status = 'disable' THEN 'enable'
+            ELSE 'disable'
         END
         WHERE user_id = ?
     `;
@@ -294,7 +294,7 @@ app.post('/api/staff/events', verifyToken, verifyStaff, (req, res) => {
             img_path,
             form_url,
             event_status,
-            create_at,
+            created_at,
             created_by
         )
         VALUES (?, ?, ?, ?, ?, 'pending', NOW(), ?)
